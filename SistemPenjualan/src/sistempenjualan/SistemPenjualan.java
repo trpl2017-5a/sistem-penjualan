@@ -16,6 +16,7 @@ public class SistemPenjualan {
      */
     public static void main(String[] args) {
         System.out.println("lallalla");
+        System.out.println("tambahLagi");
     }
     
 }
