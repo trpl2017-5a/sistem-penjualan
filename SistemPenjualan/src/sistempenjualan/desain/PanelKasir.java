@@ -15,9 +15,6 @@ import javax.swing.JOptionPane;
  */
 public class PanelKasir extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PanelKasir
-     */
     public PanelKasir() {
         initComponents();
         waktu();

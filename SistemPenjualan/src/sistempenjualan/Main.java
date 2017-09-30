@@ -14,7 +14,7 @@ import sistempenjualan.desain.PanelKasir;
 public class Main {
     
         public static void main(String args[]) {
-            PanelKasir pk = new PanelKasir();
+            PanelKasir PK = new PanelKasir();
         }
     
 }
