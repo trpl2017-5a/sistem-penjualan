@@ -8,6 +8,7 @@ package sistempenjualan.desain;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 /**
  *
@@ -24,6 +25,10 @@ public class PanelKasir extends javax.swing.JFrame {
         Date ys = new Date();
         SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy");
         tanggalField.setText(s.format(ys));
+    }
+    
+        public JTable getTabelKasir() {
+        return tabelKasir;
     }
 
     /**
