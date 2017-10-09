@@ -237,4 +237,8 @@ public class PanelKasir extends javax.swing.JFrame {
     private javax.swing.JTextField totalHargaField;
     private javax.swing.JLabel totalHargaLabel;
     // End of variables declaration//GEN-END:variables
+
+    void setSelected(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

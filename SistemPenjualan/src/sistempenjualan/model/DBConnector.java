@@ -15,8 +15,8 @@ public class DBConnector {
     Statement queryStatement;
 
     public DBConnector() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/multirasa";
-        String username = "aimin";
+        String url = "jdbc:mysql://localhost:3306/penjualan-db";
+        String username = "";
         String password = "";
         
         this.koneksi = DriverManager.getConnection(url, username, password);

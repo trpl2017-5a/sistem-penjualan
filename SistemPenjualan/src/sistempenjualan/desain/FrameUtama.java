@@ -13,6 +13,7 @@ public class FrameUtama extends javax.swing.JFrame {
 //    private PanelPenjualan panelPenjualan;
 //    private PanelPembelian panelPembelian;
     private PanelKasir2 panelKasir;
+    private PanelKasir panelKasir1;
 
     /**
      * Creates new form FrameUtama
