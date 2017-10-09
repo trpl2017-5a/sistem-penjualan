@@ -5,9 +5,12 @@
  */
 package sistempenjualan.desain;
 
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import sistempenjualan.model.TransaksiPenjualan;
 
 /**
  *
@@ -18,9 +21,7 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
     /**
      * Creates new form PanelKasir
      */
-    private PanelKasir panelKasir;
-
-    public PanelKasir2() {
+    public PanelKasir2() throws SQLException {
         initComponents();
         setWaktu();
     }
@@ -29,6 +30,10 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
         Date ys = new Date();
         SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy");
         tanggalField.setText(s.format(ys));
+    }
+
+    public JTable TabelKasir() {
+        return tk;
     }
 
     /**
@@ -57,7 +62,7 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
         bayarButton = new javax.swing.JButton();
         kodeField = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tabelKasir1 = new javax.swing.JTable();
+        tk = new javax.swing.JTable();
 
         tabelKasir.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,7 +114,7 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
             }
         });
 
-        tabelKasir1.setModel(new javax.swing.table.DefaultTableModel(
+        tk.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -120,7 +125,7 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(tabelKasir1);
+        jScrollPane2.setViewportView(tk);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -219,10 +224,10 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
     private javax.swing.JTextField kodeField;
     private javax.swing.JLabel namaBarangLabel;
     private javax.swing.JTable tabelKasir;
-    private javax.swing.JTable tabelKasir1;
     private javax.swing.JButton tambahButton;
     private javax.swing.JTextField tanggalField;
     private javax.swing.JLabel tanggalLabel;
+    private javax.swing.JTable tk;
     private javax.swing.JTextField totalHargaField;
     private javax.swing.JLabel totalHargaLabel;
     // End of variables declaration//GEN-END:variables

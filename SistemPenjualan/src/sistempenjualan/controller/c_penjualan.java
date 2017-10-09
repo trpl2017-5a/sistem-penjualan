@@ -3,13 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistempenjualan;
+package sistempenjualan.controller;
 
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import sistempenjualan.controller.c_penjualan;
 import sistempenjualan.desain.FrameUtama;
+import sistempenjualan.desain.PanelKasir;
 import sistempenjualan.desain.PanelKasir2;
 import sistempenjualan.model.TransaksiPenjualan;
 
@@ -17,11 +15,15 @@ import sistempenjualan.model.TransaksiPenjualan;
  *
  * @author USER
  */
-public class Main {
+public class c_penjualan {
 
-          public static void main(String[] args) throws SQLException {
+    PanelKasir views;
+    TransaksiPenjualan models;
 
-            c_penjualan l = new c_penjualan();
+    public c_penjualan() throws SQLException {
+        views = new PanelKasir();
+        models = new TransaksiPenjualan();
+        views.getTabelKasir().setModel(models.getTabel());
+        views.setVisible(true);
     }
-
 }

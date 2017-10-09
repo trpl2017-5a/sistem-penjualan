@@ -1,7 +1,9 @@
 package sistempenjualan.desain;
 
+import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import sistempenjualan.model.TransaksiPenjualan;
 
 /**
  *
