@@ -8,8 +8,11 @@ package sistempenjualan.desain;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import sistempenjualan.Main;
 import sistempenjualan.model.TransaksiPenjualan;
 
@@ -18,12 +21,13 @@ import sistempenjualan.model.TransaksiPenjualan;
  * @author altintop
  */
 public class PanelKasir2 extends javax.swing.JInternalFrame {
-    
+
     private TransaksiPenjualan modelTransaksi; //model kita
+
     /**
      * Creates new form PanelKasir
      */
-    public PanelKasir2() throws SQLException{
+    public PanelKasir2() throws SQLException {
         initComponents();
         setWaktu();
         modelTransaksi = new TransaksiPenjualan();
@@ -32,12 +36,36 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
 
     public void setWaktu() {
         Date ys = new Date();
-        SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
         tanggalField.setText(s.format(ys));
     }
 
     public JTable getTabelKasir() {
         return tabelKasir;
+    }
+
+    public JTextField getKasir() {
+        return kasirField;
+    }
+
+    public JTextField getKode() {
+        return kodeField;
+    }
+
+    public JTextField getBarang() {
+        return barangField;
+    }
+
+    public JTextField getJumlah() {
+        return jumlahField;
+    }
+
+    public JTextField getTanggal() {
+        return tanggalField;
+    }
+
+    public JTextField getTotalBayar() {
+        return totalHargaField;
     }
 
     /**
@@ -208,7 +236,26 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tambahButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahButtonActionPerformed
+        String Kasir = getKasir().getText();
+        String Kode = getKode().getText();
+        String Barang = getBarang().getText();
+        String Jumlah = getJumlah().getText();
+        String Tanggal = getTanggal().getText();
+        String Totalbayar = getTotalBayar().getText();
+        modelTransaksi.Tambah(Kasir, Kode, Barang, Jumlah, Tanggal, Totalbayar);
+        try {
+            modelTransaksi = new TransaksiPenjualan();
+        } catch (SQLException ex) {
+            Logger.getLogger(PanelKasir2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.tabelKasir.setModel(modelTransaksi.getTabel());
         JOptionPane.showMessageDialog(null, "Data berhasil masuk", "MultiRasa", 1);
+        getKasir().setText("");
+        getKode().setText("");
+        getBarang().setText("");
+        getJumlah().setText("");
+        getTanggal().setText("");
+        getTotalBayar().setText("");
     }//GEN-LAST:event_tambahButtonActionPerformed
 
     private void bayarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bayarButtonActionPerformed
@@ -217,7 +264,7 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
 
     private void formInternalFrameClosing(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosing
         Main.getFrameUtama().panelKasir = null;
-        System.out.println("sudah di null pas ditutup: "+Main.getFrameUtama().panelKasir);
+        System.out.println("sudah di null pas ditutup: " + Main.getFrameUtama().panelKasir);
     }//GEN-LAST:event_formInternalFrameClosing
 
 

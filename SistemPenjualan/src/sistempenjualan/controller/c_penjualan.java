@@ -17,13 +17,13 @@ import sistempenjualan.model.TransaksiPenjualan;
  */
 public class c_penjualan {
 
-    PanelKasir views;
-    TransaksiPenjualan models;
-
-    public c_penjualan() throws SQLException {
-        views = new PanelKasir();
-        models = new TransaksiPenjualan();
-        views.getTabelKasir().setModel(models.getTabel());
-        views.setVisible(true);
-    }
+//    PanelKasir views;
+//    TransaksiPenjualan models;
+//
+//    public c_penjualan() throws SQLException {
+//        views = new PanelKasir();
+//        models = new TransaksiPenjualan();
+//        views.getTabelKasir().setModel(models.getTabel());
+//        views.setVisible(true);
+//    }
 }
