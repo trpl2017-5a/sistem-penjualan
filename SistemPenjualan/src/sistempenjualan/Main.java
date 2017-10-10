@@ -13,7 +13,6 @@ import sistempenjualan.desain.PanelKasir2;
  * @author USER
  */
 public class Main {
-    
     private static FrameUtama frameUtama;
     private static PanelKasir2 panelKasir;
     
