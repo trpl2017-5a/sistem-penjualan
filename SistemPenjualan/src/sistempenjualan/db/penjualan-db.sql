@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2017 at 05:48 AM
--- Server version: 5.6.20
--- PHP Version: 5.5.15
+-- Generation Time: 10 Okt 2017 pada 05.52
+-- Versi Server: 10.1.19-MariaDB
+-- PHP Version: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `penjualan-db`
@@ -23,10 +23,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `kasir`
 --
 
-CREATE TABLE IF NOT EXISTS `transaksi` (
+CREATE TABLE `kasir` (
+  `nama_kasir` varchar(20) NOT NULL,
+  `kode_barang` int(10) NOT NULL,
+  `nama_barang` varchar(25) NOT NULL,
+  `jumlah` int(10) NOT NULL,
+  `tanggal` date NOT NULL,
+  `total_harga` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `kasir`
+--
+
+INSERT INTO `kasir` (`nama_kasir`, `kode_barang`, `nama_barang`, `jumlah`, `tanggal`, `total_harga`) VALUES
+('Eka', 1021, 'Roti Keju', 5, '2017-10-09', 25000),
+('Tisa', 2511, 'Roti Gulung', 2, '2017-10-10', 20000),
+('Eka', 2512, 'Keju', 2, '2017-10-10', 1000),
+('Tisa', 3211, 'Roti Lapis', 1, '2017-10-10', 2000);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `transaksi`
+--
+
+CREATE TABLE `transaksi` (
   `id_transaksi` int(11) NOT NULL,
   `waktu_transaksi` date NOT NULL,
   `kuantitas` int(11) NOT NULL,
@@ -38,19 +63,20 @@ CREATE TABLE IF NOT EXISTS `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `waktu_transaksi`, `kuantitas`, `tipe_transaksi`, `harga`, `nama_pembeli`, `nama_kasir`, `cabang`) VALUES
+(1, '2017-10-02', 1, 'kontan', 2000, 'Munaroh', 'Adelia', 'Jember'),
 (1, '2017-10-02', 1, 'kontan', 2000, 'Munaroh', 'Adelia', 'Jember');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `username` varchar(25) NOT NULL,
   `password` int(8) NOT NULL,
@@ -62,11 +88,21 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `alamat`, `jenis kelamin`, `privilage`, `cabang`, `no.telp`) VALUES
 (101, 'tisyana', 1234, 'Jl.Kalisat Gg.Opec 1', 'perempuan', 'kasir1', 'Jember', '0895361989742');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `kasir`
+--
+ALTER TABLE `kasir`
+  ADD PRIMARY KEY (`kode_barang`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
