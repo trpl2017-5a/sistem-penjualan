@@ -1,9 +1,7 @@
 package sistempenjualan.desain;
 
-import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import sistempenjualan.model.TransaksiPenjualan;
 
 /**
  *
@@ -14,8 +12,8 @@ public class FrameUtama extends javax.swing.JFrame {
 //    private PanelStok panelStok;
 //    private PanelPenjualan panelPenjualan;
 //    private PanelPembelian panelPembelian;
-    private PanelKasir2 panelKasir;
-    private PanelKasir panelKasir1;
+
+    public PanelKasir2 panelKasir;
 
     /**
      * Creates new form FrameUtama
@@ -283,7 +281,7 @@ public class FrameUtama extends javax.swing.JFrame {
             if (panelKasir == null) {
                 panelKasir = new PanelKasir2();
                 desktopPane.add(panelKasir);
-            }else{
+            } else {
                 panelKasir.toFront();
             }
             panelKasir.setVisible(true);
@@ -309,15 +307,14 @@ public class FrameUtama extends javax.swing.JFrame {
 //            e.printStackTrace();
 //        }
     }//GEN-LAST:event_jButtonSupplierActionPerformed
-    
-    private void onExit(){
-        int choice = JOptionPane.showConfirmDialog(this, "Anda yakin ingin keluar?","Konfirmasi Keluar",JOptionPane.YES_NO_OPTION);
+
+    private void onExit() {
+        int choice = JOptionPane.showConfirmDialog(this, "Anda yakin ingin keluar?", "Konfirmasi Keluar", JOptionPane.YES_NO_OPTION);
         if (choice == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
     }
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktopPane;

@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import sistempenjualan.Main;
 import sistempenjualan.model.TransaksiPenjualan;
 
 /**
@@ -17,13 +18,16 @@ import sistempenjualan.model.TransaksiPenjualan;
  * @author altintop
  */
 public class PanelKasir2 extends javax.swing.JInternalFrame {
-
+    
+    private TransaksiPenjualan modelTransaksi; //model kita
     /**
      * Creates new form PanelKasir
      */
-    public PanelKasir2() throws SQLException {
+    public PanelKasir2() throws SQLException{
         initComponents();
         setWaktu();
+        modelTransaksi = new TransaksiPenjualan();
+        this.tabelKasir.setModel(modelTransaksi.getTabel());
     }
 
     public void setWaktu() {
@@ -32,8 +36,8 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
         tanggalField.setText(s.format(ys));
     }
 
-    public JTable TabelKasir() {
-        return tk;
+    public JTable getTabelKasir() {
+        return tabelKasir;
     }
 
     /**
@@ -45,8 +49,6 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelKasir = new javax.swing.JTable();
         barangField = new javax.swing.JTextField();
         jumlahField = new javax.swing.JTextField();
         kodeBarangLabel = new javax.swing.JLabel();
@@ -61,26 +63,29 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
         tambahButton = new javax.swing.JButton();
         bayarButton = new javax.swing.JButton();
         kodeField = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tk = new javax.swing.JTable();
-
-        tabelKasir.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tabelKasir);
+        jScrollPane = new javax.swing.JScrollPane();
+        tabelKasir = new javax.swing.JTable();
 
         setClosable(true);
-        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setTitle("Kasir");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/sistempenjualan/images/kasir_16.png"))); // NOI18N
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameClosing(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+        });
 
         kodeBarangLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         kodeBarangLabel.setText("Kode Barang");
@@ -114,7 +119,7 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
             }
         });
 
-        tk.setModel(new javax.swing.table.DefaultTableModel(
+        tabelKasir.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -125,13 +130,13 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(tk);
+        jScrollPane.setViewportView(tabelKasir);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,7 +201,7 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
                     .addComponent(totalHargaLabel)
                     .addComponent(totalHargaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE))
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE))
         );
 
         pack();
@@ -210,12 +215,16 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(null, "Popup Pembayaran", "MultiRasa", 1);
     }//GEN-LAST:event_bayarButtonActionPerformed
 
+    private void formInternalFrameClosing(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosing
+        Main.getFrameUtama().panelKasir = null;
+        System.out.println("sudah di null pas ditutup: "+Main.getFrameUtama().panelKasir);
+    }//GEN-LAST:event_formInternalFrameClosing
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField barangField;
     private javax.swing.JButton bayarButton;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JTextField jumlahField;
     private javax.swing.JLabel jumlahLabel;
     private javax.swing.JTextField kasirField;
@@ -227,7 +236,6 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
     private javax.swing.JButton tambahButton;
     private javax.swing.JTextField tanggalField;
     private javax.swing.JLabel tanggalLabel;
-    private javax.swing.JTable tk;
     private javax.swing.JTextField totalHargaField;
     private javax.swing.JLabel totalHargaLabel;
     // End of variables declaration//GEN-END:variables
