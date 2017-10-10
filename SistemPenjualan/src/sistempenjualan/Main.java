@@ -47,6 +47,7 @@ public class Main {
             public void run() {
                 frameUtama = new FrameUtama();
                 frameUtama.setVisible(true);
+                
             }
         });
     }
