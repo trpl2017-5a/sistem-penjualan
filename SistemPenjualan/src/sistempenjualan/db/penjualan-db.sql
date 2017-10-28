@@ -1,21 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Generation Time: 10 Okt 2017 pada 05.52
--- Versi Server: 10.1.19-MariaDB
--- PHP Version: 5.5.38
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Database: `penjualan-db`
 --
@@ -40,6 +22,8 @@ CREATE TABLE `kasir` (
 --
 
 INSERT INTO `kasir` (`nama_kasir`, `kode_barang`, `nama_barang`, `jumlah`, `tanggal`, `total_harga`) VALUES
+('ead', 121, 'xz', 1, '2017-10-10', 1),
+('saf', 1002, 'fas', 2, '2017-10-10', 10000),
 ('Eka', 1021, 'Roti Keju', 5, '2017-10-09', 25000),
 ('Tisa', 2511, 'Roti Gulung', 2, '2017-10-10', 20000),
 ('Eka', 2512, 'Keju', 2, '2017-10-10', 1000),

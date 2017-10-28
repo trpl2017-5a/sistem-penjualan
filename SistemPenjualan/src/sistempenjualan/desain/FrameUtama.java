@@ -14,6 +14,7 @@ public class FrameUtama extends javax.swing.JFrame {
 //    private PanelPembelian panelPembelian;
 
     public PanelKasir2 panelKasir;
+    public panelStok panelStok;
 
     /**
      * Creates new form FrameUtama
@@ -229,19 +230,19 @@ public class FrameUtama extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
     private void jButtonStokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStokActionPerformed
-//        try {
-//            if (panelStok == null) {
-//                panelStok = new PanelStok();
-//                desktopPane.add(panelStok);
-//            }else{
-//                panelStok.toFront();
-//            }
-//            panelStok.setVisible(true);
-//            panelStok.setSelected(true);
-//            panelStok.setSize(desktopPane.getSize());
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            if (panelStok == null) {
+                panelStok = new panelStok();
+                desktopPane.add(panelStok);
+            }else{
+                panelStok.toFront();
+            }
+            panelStok.setVisible(true);
+            panelStok.setSelected(true);
+            panelStok.setSize(desktopPane.getSize());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jButtonStokActionPerformed
 
     private void jButtonPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPenjualanActionPerformed
