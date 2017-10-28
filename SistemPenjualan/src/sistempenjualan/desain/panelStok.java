@@ -26,7 +26,6 @@ import sistempenjualan.model.Stok;
 public class panelStok extends javax.swing.JInternalFrame {
 
     private Stok modelStok;
-    //String id, nama, pokok, jual, stok;
 
     /**
      * Creates new form PanelKasir
