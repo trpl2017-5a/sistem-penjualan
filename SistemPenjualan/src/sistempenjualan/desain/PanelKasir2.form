@@ -33,7 +33,6 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jumlahLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="tanggalLabel" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -44,27 +43,42 @@
                           <Component id="tanggalField" min="-2" pref="99" max="-2" attributes="0"/>
                           <Component id="totalHargaField" min="-2" pref="99" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="satuanField" min="-2" pref="55" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="totalBAYAR" min="-2" pref="194" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="satuanField" min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Component id="pilihButton" min="-2" pref="67" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Component id="jumlahLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="namaBarangLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="kasirLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="barangField" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jumlahField" alignment="0" pref="99" max="32767" attributes="0"/>
-                                  <Component id="kasirField" alignment="0" max="32767" attributes="0"/>
-                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="kodeBarangLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="kodeComboBox" pref="101" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="kodeField" pref="99" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="barangField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jumlahField" alignment="0" pref="99" max="32767" attributes="0"/>
+                              <Component id="kasirField" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
@@ -88,7 +102,8 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="kodeBarangLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="kodeComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pilihButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="kodeField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -113,7 +128,10 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="totalHargaLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalHargaField" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="totalHargaField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="totalBAYAR" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -125,7 +143,7 @@
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane" pref="249" max="32767" attributes="0"/>
+              <Component id="jScrollPane" pref="254" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -177,7 +195,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Total Harga"/>
+        <Property name="text" type="java.lang.String" value="Harga"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="kasirLabel">
@@ -233,23 +251,22 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JComboBox" name="kodeComboBox">
+    <Component class="javax.swing.JTextField" name="satuanField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="totalBAYAR">
       <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="1001"/>
-            <StringItem index="1" value="1002"/>
-            <StringItem index="2" value="1003"/>
-            <StringItem index="3" value="1004"/>
-            <StringItem index="4" value="1005"/>
-          </StringArray>
-        </Property>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="pilihButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pilih"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kodeComboBoxActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pilihButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="satuanField">
+    <Component class="javax.swing.JTextField" name="kodeField">
     </Component>
   </SubComponents>
 </Form>

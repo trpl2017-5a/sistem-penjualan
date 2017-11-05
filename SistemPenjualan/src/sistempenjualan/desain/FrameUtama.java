@@ -14,7 +14,7 @@ public class FrameUtama extends javax.swing.JFrame {
 //    private PanelPembelian panelPembelian;
 
     public PanelKasir2 panelKasir;
-    public panelStok panelStok;
+    public PanelStok panelStok;
 
     /**
      * Creates new form FrameUtama
@@ -34,11 +34,11 @@ public class FrameUtama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToolBar1 = new javax.swing.JToolBar();
         jButtonSupplier = new javax.swing.JButton();
-        jButtonStok = new javax.swing.JButton();
         jButtonPenjualan = new javax.swing.JButton();
         jButtonPembelian = new javax.swing.JButton();
+        jToolBar1 = new javax.swing.JToolBar();
+        jButtonStok = new javax.swing.JButton();
         jButtonKasir = new javax.swing.JButton();
         desktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -55,17 +55,6 @@ public class FrameUtama extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenuItemTentangKami = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Point Of Sales - Multirasa");
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
-
-        jToolBar1.setFloatable(false);
-        jToolBar1.setRollover(true);
-
         jButtonSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistempenjualan/images/supplier.png"))); // NOI18N
         jButtonSupplier.setText("Supplier");
         jButtonSupplier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -80,7 +69,47 @@ public class FrameUtama extends javax.swing.JFrame {
                 jButtonSupplierActionPerformed(evt);
             }
         });
-        jToolBar1.add(jButtonSupplier);
+
+        jButtonPenjualan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistempenjualan/images/penjualan.png"))); // NOI18N
+        jButtonPenjualan.setText("Penjualan");
+        jButtonPenjualan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonPenjualan.setFocusable(false);
+        jButtonPenjualan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonPenjualan.setMaximumSize(new java.awt.Dimension(100, 100));
+        jButtonPenjualan.setMinimumSize(new java.awt.Dimension(70, 70));
+        jButtonPenjualan.setPreferredSize(new java.awt.Dimension(96, 96));
+        jButtonPenjualan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonPenjualan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPenjualanActionPerformed(evt);
+            }
+        });
+
+        jButtonPembelian.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistempenjualan/images/pembelian.png"))); // NOI18N
+        jButtonPembelian.setText("Pembelian");
+        jButtonPembelian.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonPembelian.setFocusable(false);
+        jButtonPembelian.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonPembelian.setMaximumSize(new java.awt.Dimension(100, 100));
+        jButtonPembelian.setMinimumSize(new java.awt.Dimension(70, 70));
+        jButtonPembelian.setPreferredSize(new java.awt.Dimension(96, 96));
+        jButtonPembelian.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonPembelian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPembelianActionPerformed(evt);
+            }
+        });
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Point Of Sales - Multirasa");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
+
+        jToolBar1.setFloatable(false);
+        jToolBar1.setRollover(true);
 
         jButtonStok.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistempenjualan/images/stok.png"))); // NOI18N
         jButtonStok.setText("Stock");
@@ -97,38 +126,6 @@ public class FrameUtama extends javax.swing.JFrame {
             }
         });
         jToolBar1.add(jButtonStok);
-
-        jButtonPenjualan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistempenjualan/images/penjualan.png"))); // NOI18N
-        jButtonPenjualan.setText("Penjualan");
-        jButtonPenjualan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonPenjualan.setFocusable(false);
-        jButtonPenjualan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonPenjualan.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButtonPenjualan.setMinimumSize(new java.awt.Dimension(70, 70));
-        jButtonPenjualan.setPreferredSize(new java.awt.Dimension(96, 96));
-        jButtonPenjualan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButtonPenjualan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPenjualanActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jButtonPenjualan);
-
-        jButtonPembelian.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistempenjualan/images/pembelian.png"))); // NOI18N
-        jButtonPembelian.setText("Pembelian");
-        jButtonPembelian.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonPembelian.setFocusable(false);
-        jButtonPembelian.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonPembelian.setMaximumSize(new java.awt.Dimension(100, 100));
-        jButtonPembelian.setMinimumSize(new java.awt.Dimension(70, 70));
-        jButtonPembelian.setPreferredSize(new java.awt.Dimension(96, 96));
-        jButtonPembelian.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButtonPembelian.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPembelianActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jButtonPembelian);
 
         jButtonKasir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistempenjualan/images/kasir.png"))); // NOI18N
         jButtonKasir.setText("Kasir");
@@ -232,7 +229,7 @@ public class FrameUtama extends javax.swing.JFrame {
     private void jButtonStokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStokActionPerformed
         try {
             if (panelStok == null) {
-                panelStok = new panelStok();
+                panelStok = new PanelStok();
                 desktopPane.add(panelStok);
             }else{
                 panelStok.toFront();
@@ -281,6 +278,7 @@ public class FrameUtama extends javax.swing.JFrame {
         try {
             if (panelKasir == null) {
                 panelKasir = new PanelKasir2();
+                
                 desktopPane.add(panelKasir);
             } else {
                 panelKasir.toFront();
