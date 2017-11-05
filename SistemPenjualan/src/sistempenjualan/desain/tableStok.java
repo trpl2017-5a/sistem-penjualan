@@ -9,8 +9,11 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import sistempenjualan.model.Stok;
 
 /**
@@ -21,11 +24,17 @@ public class tableStok extends javax.swing.JFrame {
 
     private Stok modelStok;
     PanelKasir2 views;
+    String[] produk = new String[2];
 
     public tableStok() throws SQLException {
         initComponents();
         modelStok = new Stok();
         this.stokTable.setModel(modelStok.getTabel());
+    }
+
+    public String[] getProduk() {
+        setVisible(true);
+        return produk;
     }
 
     public JTable getTabel() {
@@ -119,20 +128,38 @@ public class tableStok extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void pilihButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihButtonActionPerformed
-        int baris = getTabel().getSelectedRow();
-        String id = getTabel().getValueAt(baris, 1).toString();
-        String nama = getTabel().getValueAt(baris, 2).toString();
-        String jual = getTabel().getValueAt(baris, 4).toString();
-                getTest().setText(nama);
-        views.getKodeBarang().setText(id);
-        views.getBarang().setText(nama);
-        views.getTotalBayar().setText(jual);
+        if (produk != null) {
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Pilih satu barang terlebih dahulu!",
+                    "error", JOptionPane.ERROR_MESSAGE);
+        }
+//        int baris = getTabel().getSelectedRow();
+//        String id = getTabel().getValueAt(baris, 1).toString();
+//        String nama = getTabel().getValueAt(baris, 2).toString();
+//        String jual = getTabel().getValueAt(baris, 4).toString();
+//        getTest().setText(nama);
+//        views.getKodeBarang().setText(id);
+//        views.getBarang().setText(nama);
+//        views.getTotalBayar().setText(jual);
 
-        
+
     }//GEN-LAST:event_pilihButtonActionPerformed
 
+    private class tabelProdukListener implements ListSelectionListener {
+
+        public void valueChanged(ListSelectionEvent e) {
+            if (stokTable.getSelectedRow() >= 0) {
+                produk[0] = getTabel().getValueAt(getTabel().getSelectedRow(), 1).toString();
+                produk[1] = getTabel().getValueAt(getTabel().getSelectedRow(), 2).toString();
+                produk[2] = getTabel().getValueAt(getTabel().getSelectedRow(), 4).toString();
+            }
+        }
+    }
+
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
-        dispose();   
+        produk = null;
+        dispose();
     }//GEN-LAST:event_closeButtonActionPerformed
 
     /**

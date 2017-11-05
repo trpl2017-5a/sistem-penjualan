@@ -368,16 +368,18 @@ public class PanelKasir2 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jumlahFieldKeyReleased
 
     private void pilihButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihButtonActionPerformed
-        
-      tableStok stok;
         try {
-            stok = new tableStok();
-            stok.setVisible(true);
+            String[] p;
+            p = new tableStok().getProduk();
+            if (p != null) {
+                getKodeBarang().setText(p[0]);
+                getBarang().setText(p[1]);
+                getTotalBayar().setText(p[2]);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(PanelKasir2.class.getName()).log(Level.SEVERE, null, ex);
         }
-      
-        
+
     }//GEN-LAST:event_pilihButtonActionPerformed
 
 

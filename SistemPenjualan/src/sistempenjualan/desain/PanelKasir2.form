@@ -75,11 +75,9 @@
                       </Group>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="kodeField" pref="99" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="barangField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jumlahField" alignment="0" pref="99" max="32767" attributes="0"/>
-                              <Component id="kasirField" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="barangField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jumlahField" alignment="0" pref="99" max="32767" attributes="0"/>
+                          <Component id="kasirField" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="tambahButton" min="-2" max="-2" attributes="0"/>
