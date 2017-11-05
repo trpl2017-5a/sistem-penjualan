@@ -5,7 +5,7 @@ package sistempenjualan.desain;
  * @author altintop
  */
 public class PanelBayar extends javax.swing.JFrame {
-
+PanelKasir2 kasir;
     public PanelBayar() {
         initComponents();  
         bayarField.setText("");
@@ -38,7 +38,6 @@ public class PanelBayar extends javax.swing.JFrame {
         hargaLabel.setText("Total Harga :");
 
         bayarField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        bayarField.setText("jTextField1");
 
         bayarLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         bayarLabel.setText("Uang Pembayaran :");
@@ -49,10 +48,8 @@ public class PanelBayar extends javax.swing.JFrame {
         hargaField.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         hargaField.setForeground(new java.awt.Color(255, 0, 51));
         hargaField.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        hargaField.setText("jLabel4");
 
         kembaliField.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kembaliField.setText("jLabel5");
 
         bayarButton.setText("Bayar");
 
@@ -90,9 +87,9 @@ public class PanelBayar extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(hargaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hargaField))
+                    .addComponent(hargaField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bayarField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -100,12 +97,12 @@ public class PanelBayar extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kembaliLabel)
-                    .addComponent(kembaliField))
+                    .addComponent(kembaliField, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(82, 82, 82)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bayarButton)
                     .addComponent(batalButton))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(38, 38, 38))
         );
 
         pack();
